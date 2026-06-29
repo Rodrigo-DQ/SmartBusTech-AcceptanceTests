@@ -3,6 +3,7 @@
 ![BDD](https://img.shields.io/badge/BDD-Gherkin-green)
 ![GitHub](https://img.shields.io/badge/GitHub-Repository-black)
 ![Course](https://img.shields.io/badge/Course-Ingeniería%20de%20Requisitos-blue)
+
 Este repositorio contiene los Acceptance Tests desarrollados para el proyecto **SmartBus Tech**, elaborado para el curso de Ingeniería de Requisitos.
 
 Las pruebas de aceptación fueron implementadas utilizando **Behavior-Driven Development (BDD)** y redactadas en lenguaje **Gherkin**, siguiendo la estructura:
