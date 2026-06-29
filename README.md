@@ -47,7 +47,11 @@ SmartBusTech-AcceptanceTests
     └── USNF04.feature
 
 ```
+## Organización de las carpetas
 
+- **EP005_InteligenciaNegocio:** pruebas de aceptación relacionadas con dashboards, KPIs y reportes estratégicos para la toma de decisiones.
+- **EP002_ControlRecaudacion:** pruebas de aceptación correspondientes al proceso de recaudación diaria y liquidación de caja.
+- **RequisitosNoFuncionales:** pruebas de aceptación relacionadas con requisitos no funcionales de autenticación, autorización y seguridad.
 ---
 
 ## Tecnologías utilizadas
