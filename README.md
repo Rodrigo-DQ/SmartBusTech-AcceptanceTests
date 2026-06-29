@@ -1,4 +1,4 @@
-🚌# SmartBusTech-AcceptanceTests
+# 🚌SmartBusTech-AcceptanceTests
 Este repositorio contiene los Acceptance Tests desarrollados para el proyecto **SmartBus Tech**, elaborado para el curso de Ingeniería de Requisitos.
 
 Las pruebas de aceptación fueron implementadas utilizando **Behavior-Driven Development (BDD)** y redactadas en lenguaje **Gherkin**, siguiendo la estructura:
@@ -11,7 +11,7 @@ Las pruebas de aceptación fueron implementadas utilizando **Behavior-Driven Dev
 Cada archivo `.feature` corresponde a una User Story definida durante el Capitulo 3: Requirements Specification.
 
 ---
-📁# Estructura del proyecto
+# 📁Estructura del proyecto
 
 ```text
 SmartBusTech-AcceptanceTests
