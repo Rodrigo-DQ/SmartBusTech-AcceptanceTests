@@ -1,5 +1,3 @@
-#US50_DashboardEjecutivo.feature
-
 Feature: Dashboard Ejecutivo Consolidado
 
     Background:
