@@ -4,17 +4,16 @@ Feature: Monitoreo de Disponibilidad de Flota
         Given que el administrador operativo ha iniciado sesión en SmartBus Tech
         And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
 
-    Scenario: Consulta exitosa de disponibilidad de flota
+    Scenario: Consulta de disponibilidad de múltiples unidades
 
-        Given que existen registros actualizados del estado operativo de las unidades
-        When el administrador operativo accede al panel de disponibilidad de flota
-        Then el sistema muestra la cantidad de unidades operativas
-        And muestra la cantidad de unidades en mantenimiento o fuera de servicio
-        And calcula el porcentaje total de disponibilidad de la flota
+        When el administrador consulta la disponibilidad de las siguientes unidades
 
-    Scenario: Consulta de disponibilidad sin información operativa
+            | Unidad | Estado Operativo   | Resultado Esperado          |
+            | BUS001 | Operativo          | Disponible                  |
+            | BUS015 | En mantenimiento   | No disponible               |
+            | BUS023 | Fuera de servicio  | No disponible               |
+            | BUS030 | Sin información    | Estado no disponible        |
 
-        Given que no existen registros actualizados del estado operativo de las unidades
-        When el administrador operativo accede al panel de disponibilidad de flota
-        Then el sistema muestra el mensaje "No existen datos de disponibilidad registrados"
-        And evita mostrar indicadores incompletos o erróneos
+        Then el sistema muestra el estado operativo correspondiente de cada unidad
+        And calcula el porcentaje de disponibilidad de la flota considerando las unidades disponibles
+        And muestra el mensaje "Estado de unidad pendiente de actualización" para las unidades sin información disponible
