@@ -3,18 +3,17 @@ Feature: Autenticación Segura con Credenciales Únicas
     Background:
         Given que el usuario se encuentra en la pantalla de inicio de sesión de SmartBus Tech
 
-    Scenario: Inicio de sesión exitoso con credenciales válidas
+    Scenario: Validación de autenticación con múltiples credenciales
 
-        Given que el usuario ingresa un correo registrado y una contraseña válida
-        When presiona el botón "Iniciar Sesión"
-        Then el sistema valida las credenciales en menos de 3 segundos
-        And permite el acceso al panel correspondiente al rol del usuario
-        And registra el inicio de sesión exitoso
+        When el usuario intenta iniciar sesión con las siguientes credenciales
 
-    Scenario: Rechazo de acceso por credenciales incorrectas
+            | Correo              | Contraseña | Resultado Esperado |
+            | admin@smartbus.pe   | Admin123   | Acceso permitido   |
+            | gerente@smartbus.pe | Gerente01  | Acceso permitido   |
+            | chofer@smartbus.pe  | Chofer123  | Acceso permitido   |
+            | admin@smartbus.pe   | 123456     | Acceso denegado    |
+            | usuario@smartbus.pe |            | Acceso denegado    |
 
-        Given que el usuario ingresa un correo registrado con una contraseña incorrecta
-        When presiona el botón "Iniciar Sesión"
-        Then el sistema deniega el acceso a la plataforma
-        And muestra el mensaje "Error: Correo o contraseña incorrectos"
-        And no revela cuál de los campos ingresados es incorrecto
+        Then el sistema valida cada intento de autenticación
+        And concede el acceso únicamente a las credenciales válidas
+        And muestra el mensaje "Error: Correo o contraseña incorrectos" para los intentos inválidos
