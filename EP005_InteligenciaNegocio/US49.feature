@@ -2,7 +2,7 @@ Feature: Monitoreo de Indicadores de Mantenimiento
 
     Background:
         Given que el administrador operativo ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en el panel de indicadores de mantenimiento
 
     Scenario: Identificación de unidades con riesgo de mantenimiento
 
