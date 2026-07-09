@@ -4,17 +4,18 @@ Feature: Identificación de Unidades con Bajo Desempeño
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
         And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
 
-    Scenario: Identificación exitosa de unidades con bajo desempeño
+    Scenario: Detección automática de unidades con rendimiento inferior
 
-        Given que existen registros suficientes para comparar el desempeño de las unidades
-        When el gerente solicita el análisis de rendimiento de la flota
-        Then el sistema identifica las unidades con indicadores por debajo del promedio establecido
-        And resalta visualmente las unidades con bajo desempeño
-        And muestra las métricas que justifican la clasificación obtenida
+        Given que existen registros financieros y operativos suficientes de las unidades
+        When el gerente solicita el análisis de desempeño de la flota
+        Then el sistema compara el rendimiento de cada unidad con el promedio general
+        And identifica las unidades que se encuentran por debajo del umbral esperado
+        And muestra una alerta visual para las unidades clasificadas con bajo desempeño
 
-    Scenario: Evaluación de desempeño con datos insuficientes
+    Scenario: Evaluación incompleta por falta de datos operativos
 
-        Given que algunas unidades no cuentan con registros suficientes para ser analizadas
-        When el gerente solicita el análisis de rendimiento de la flota
-        Then el sistema excluye dichas unidades del análisis comparativo
+        Given que algunas unidades no cuentan con registros suficientes de ingresos, gastos o disponibilidad
+        When el sistema intenta ejecutar el análisis de desempeño
+        Then excluye las unidades con información incompleta del cálculo comparativo
         And muestra el mensaje "Información insuficiente para evaluar el desempeño de determinadas unidades"
+        And permite consultar el detalle de las unidades excluidas
