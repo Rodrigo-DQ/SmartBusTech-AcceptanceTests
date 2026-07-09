@@ -2,7 +2,7 @@ Feature: Exportación de Reportes Financieros en PDF
 
     Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en la sección de reportes financieros exportables
 
     Scenario: Generación de un reporte financiero ejecutivo en PDF
 
