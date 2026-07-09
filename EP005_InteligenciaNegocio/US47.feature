@@ -2,7 +2,7 @@ Feature: Visualización de Tendencias Históricas
 
     Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en la vista de tendencias históricas
 
     Scenario: Análisis de evolución histórica de ingresos
 
