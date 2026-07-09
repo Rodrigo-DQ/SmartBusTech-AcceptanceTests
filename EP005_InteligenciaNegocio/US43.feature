@@ -2,7 +2,7 @@ Feature: Monitoreo de Disponibilidad de Flota
 
     Background:
         Given que el administrador operativo ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en el panel de disponibilidad de flota
 
     Scenario: Análisis de disponibilidad de múltiples unidades
 
