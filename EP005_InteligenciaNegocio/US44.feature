@@ -2,7 +2,7 @@ Feature: Comparación de Rentabilidad por Ruta
 
     Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en la vista de comparación de rutas
 
     Scenario: Comparación económica entre rutas seleccionadas
 
