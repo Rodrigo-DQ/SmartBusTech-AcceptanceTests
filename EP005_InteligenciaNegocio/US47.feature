@@ -4,17 +4,18 @@ Feature: Visualización de Tendencias Históricas
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
         And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
 
-    Scenario: Consulta exitosa de tendencias históricas
+    Scenario: Análisis de evolución histórica de ingresos
 
-        Given que existen registros históricos de ingresos almacenados en el sistema
-        When el gerente selecciona un rango de fechas para el análisis
-        Then el sistema muestra gráficos con la evolución histórica de los ingresos
-        And presenta indicadores de crecimiento o disminución respecto a períodos anteriores
-        And permite analizar la información correspondiente al período consultado
+        Given que existen registros financieros almacenados de períodos anteriores
+        When el gerente selecciona un rango de fechas para analizar la evolución de ingresos
+        Then el sistema construye una gráfica temporal con los ingresos del período consultado
+        And compara los resultados con períodos anteriores disponibles
+        And muestra la variación de crecimiento o disminución de la rentabilidad
 
-    Scenario: Consulta de tendencias históricas sin información disponible
+    Scenario: Análisis histórico sin registros disponibles
 
-        Given que no existen registros históricos para el rango de fechas seleccionado
+        Given que el rango de fechas seleccionado no contiene información financiera histórica
         When el gerente solicita visualizar las tendencias históricas
-        Then el sistema muestra el mensaje "No existen datos históricos para el período seleccionado"
-        And no genera gráficos de tendencias
+        Then el sistema evita generar la gráfica temporal
+        And muestra el mensaje "No existen datos históricos para el período seleccionado"
+        And mantiene disponibles los filtros para seleccionar un nuevo rango de fechas
