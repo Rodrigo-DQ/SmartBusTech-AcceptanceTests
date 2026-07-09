@@ -4,18 +4,18 @@ Feature: Consulta de Rentabilidad por Unidad
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
         And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
 
-    Scenario: Consulta exitosa de la rentabilidad por unidad
+    Scenario: Generación del ranking económico por unidad
 
-        Given que existen registros financieros asociados a las unidades de la flota
-        When el gerente selecciona el período de evaluación y consulta la rentabilidad por unidad
-        Then el sistema muestra el ranking de rentabilidad de cada unidad
-        And presenta los ingresos, egresos y utilidad correspondiente a cada bus
-        And ordena la información de mayor a menor rentabilidad
+        Given que existen registros de ingresos, gastos operativos y vueltas realizadas por cada bus
+        When el gerente selecciona un rango de fechas y solicita el análisis por unidad
+        Then el sistema calcula la utilidad neta de cada bus
+        And ordena las unidades de mayor a menor rentabilidad
+        And muestra el ranking económico con placa, ingresos, gastos y utilidad neta
 
-    Scenario: Consulta de rentabilidad con información insuficiente
+    Scenario: Exclusión de unidades sin datos suficientes
 
-        Given que una o más unidades no cuentan con registros suficientes para calcular su rentabilidad
-        When el gerente consulta la rentabilidad por unidad
-        Then el sistema identifica las unidades con información insuficiente
+        Given que algunas unidades no cuentan con registros completos de ingresos o gastos
+        When el gerente solicita el análisis de rentabilidad por unidad
+        Then el sistema excluye del ranking a las unidades con información incompleta
+        And identifica dichas unidades con el estado "Información insuficiente"
         And muestra el mensaje "No existen datos suficientes para calcular la rentabilidad de una o más unidades"
-        And excluye dichas unidades del ranking de rentabilidad
