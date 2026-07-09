@@ -1,20 +1,21 @@
-Feature: Visualización de KPISs Financieros
+Feature: Visualización de KPIs Financieros
 
-    Background: 
+    Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
         And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
 
-    Scenario: Consulta exitosa de KPIs financieros
+    Scenario: Análisis de los principales indicadores financieros
 
         Given que existen registros financieros correspondientes al período seleccionado
         When el gerente accede al panel de KPIs financieros
-        Then el sistema muestra los indicadores de ingresos, egresos, utilidad y margen de rentabilidad
-        And presenta la información mediante tarjetas y gráficos interactivos
-        And los indicadores corresponden al período consultado
+        Then el sistema calcula los indicadores de ingresos, egresos, utilidad y margen de rentabilidad
+        And presenta los resultados mediante tarjetas, gráficos y tendencias visuales
+        And resalta automáticamente los indicadores con variaciones significativas respecto al período anterior
 
-    Scenario: Consulta de KPIs de información disponible
+    Scenario: Visualización sin información financiera disponible
 
         Given que no existen registros financieros para el período seleccionado
         When el gerente accede al panel de KPIs financieros
-        Then el sistema muestra el mensaje "No existen datos financieros disponibles para el período seleccionado"
-        And no presenta indicadores ni gráficos financieros
+        Then el sistema informa que no existen datos para realizar el análisis financiero
+        And muestra el mensaje "No existen datos financieros disponibles para el período seleccionado"
+        And mantiene habilitados los filtros para seleccionar un nuevo período de consulta
