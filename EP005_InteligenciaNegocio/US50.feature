@@ -2,7 +2,7 @@ Feature: Dashboard Ejecutivo Consolidado
 
     Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en el dashboard ejecutivo consolidado
 
     Scenario: Consolidación de información estratégica para la toma de decisiones
 
