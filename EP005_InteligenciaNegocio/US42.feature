@@ -2,7 +2,7 @@ Feature: Consulta de Rentabilidad por Unidad
 
     Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en la vista de análisis de rentabilidad por unidad
 
     Scenario: Generación del ranking económico por unidad
 
