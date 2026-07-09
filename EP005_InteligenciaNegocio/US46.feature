@@ -2,7 +2,7 @@ Feature: Exportación de Reportes Operativos en Excel
 
     Background:
         Given que el administrador operativo ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en la sección de reportes operativos exportables
 
     Scenario: Generación de un reporte operativo editable en Excel
 
