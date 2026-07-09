@@ -1,4 +1,5 @@
 Feature: Identificación de Unidades con Bajo Desempeño
+
     Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
         And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
