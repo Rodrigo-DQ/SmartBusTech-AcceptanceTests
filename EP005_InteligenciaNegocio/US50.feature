@@ -4,18 +4,18 @@ Feature: Dashboard Ejecutivo Consolidado
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
         And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
 
-    Scenario: Visualización exitosa del dashboard ejecutivo
+    Scenario: Consolidación de información estratégica para la toma de decisiones
 
-        Given que existen registros financieros, operativos y de mantenimiento disponibles
+        Given que existen registros financieros, operativos y de mantenimiento actualizados
         When el gerente accede al dashboard ejecutivo consolidado
-        Then el sistema muestra KPIs financieros de rentabilidad
-        And presenta indicadores de disponibilidad de flota
-        And muestra métricas relacionadas con mantenimiento y desempeño operativo en una única vista consolidada
+        Then el sistema integra la información proveniente de los diferentes módulos del sistema
+        And presenta indicadores estratégicos de rentabilidad, disponibilidad de flota y mantenimiento en una única vista
+        And actualiza automáticamente los indicadores con la información más reciente disponible
 
-    Scenario: Carga parcial de indicadores estratégicos
+    Scenario: Consolidación con fuentes de información parcialmente disponibles
 
-        Given que una o más fuentes de información presentan problemas de disponibilidad
+        Given que uno o más módulos del sistema presentan información incompleta o no disponible
         When el gerente accede al dashboard ejecutivo consolidado
-        Then el sistema muestra la información disponible en el dashboard
-        And identifica claramente los indicadores que no pudieron cargarse
+        Then el sistema carga los indicadores que se encuentran disponibles
+        And identifica los módulos cuya información no pudo integrarse
         And muestra el mensaje "Algunos indicadores no pudieron cargarse correctamente. Intente nuevamente más tarde"
