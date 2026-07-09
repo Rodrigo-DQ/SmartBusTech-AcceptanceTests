@@ -2,7 +2,7 @@ Feature: Visualización de KPIs Financieros
 
     Background:
         Given que el gerente de transporte ha iniciado sesión en SmartBus Tech
-        And se encuentra en el módulo de Inteligencia de Negocio y Reportes Estratégicos
+        And se encuentra en el panel de KPIs financieros
 
     Scenario: Análisis de los principales indicadores financieros
 
